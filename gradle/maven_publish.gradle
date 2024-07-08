@@ -1,0 +1,24 @@
+apply plugin: 'maven-publish'
+
+afterEvaluate {
+    publishing {
+        repositories {
+            maven {
+                name = "GitHubPackages" // https://github.com/BackPackerDz/maplibre-navigation-android
+                url = uri("https://maven.pkg.github.com/BackPackerDz/maplibre-navigation-android")
+                credentials {
+                    username = System.getenv("GITHUB_USER")
+                    password = System.getenv("GITHUB_TOKEN")
+                }
+            }
+        }
+        publications {
+            release(MavenPublication) {
+                // Adjust 'from(components.release)' to match your project's components
+                groupId = "com.github.maplibre"
+                artifactId = project.name
+                version = "1.0.0"
+            }
+        }
+    }
+}

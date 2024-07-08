@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 java {
   toolchain {
@@ -102,7 +103,11 @@ dependencies {
 }
 
 apply from: 'javadoc.gradle'
-apply from: "${rootDir}/gradle/mvn-push-android.gradle"
+//apply from: "${rootDir}/gradle/mvn-push-android.gradle"
+// maven_publish.gradle
+apply from: "${rootDir}/gradle/maven_publish.gradle"
 apply from: "${rootDir}/gradle/checkstyle.gradle"
 apply from: "${rootDir}/gradle/dependencies-graph.gradle"
 apply from: "${rootDir}/gradle/dependency-updates.gradle"
+
+
