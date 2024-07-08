@@ -15,7 +15,7 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 // Adjust 'from(components.release)' to match your project's components
-                groupId = "com.github.maplibre"
+                groupId = "com.hudhud.maplibre"
                 artifactId = project.name
                 version = "1.0.1"
             }
